@@ -387,6 +387,8 @@ PetscErrorCode OPFLOWSolverSetUp_HIOPSPARSEGPU(OPFLOW opflow) {
   hiop->sp->options->SetStringValue("fixed_var", "relax");
   hiop->sp->options->SetStringValue("Hessian", "analytical_exact");
   hiop->sp->options->SetStringValue("KKTLinsys", "xdycyd");
+  hiop->sp->options->SetStringValue("linear_solver_sparse", "ginkgo");
+  hiop->sp->options->SetStringValue("ginkgo_exec", "hip");
 
   hiop->sp->options->SetIntegerValue("verbosity_level", verbose_level);
   hiop->sp->options->SetNumericValue("mu0", 1e-1);
